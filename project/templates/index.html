@@ -4,21 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+            padding: 100px;
+            text-align: center;
+            box-shadow: 0 0 20px;
+            margin: 110px;
+            width: 400px;
+            margin-left: 28%;
+            border-radius: 8px;
+            background-color: rgb(189, 231, 194);
+            font-size: large;
+        }
+        button{
+            size: 15px;
+            background-color: rgb(47, 88, 47);
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h2>To-do List</h2>
-    <form method="POST">
-        {% csrf_token %}
-        <label for="Taskname">Task Name</label>
-        <input type="text" placeholder="add task" name="task-name">
-        <br><br>
-        <label for="date">Date</label>
-        <input type="date" name="task-date">
-        <br><br>
-        <button>Add</button>
-    </form>
-    <button>
-        <a href="{% url 'task_list' %}">view task</a>
-    </button>
+    <div class="container">
+       
+        <h2>To-do List</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="Taskname">Task Name</label>
+            <input type="text" placeholder="add task" name="task-name">
+            <br><br>
+            <label for="date">Date</label>
+            <input type="date" name="task-date">
+            <br><br>
+            <button>Add Task</button>
+            <br><br>
+        </form>
+        <button>
+            <a href="{% url 'task_list' %}" style="color: white; text-decoration: none;">View Task</a>
+        </button>
+    </div>
 </body>
 </html>
