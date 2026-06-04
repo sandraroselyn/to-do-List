@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Update To-do List</h2>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Task Name</label>
+        <input type="text" name="task-name" value="{{a.task}}">
+
+        <br><br>
+
+        <label>Date</label>
+        <input type="date" name="task-date" value="{{a.date|date:'Y-m-d'}}">
+
+        <br><br>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
