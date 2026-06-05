@@ -24,7 +24,14 @@
         <div class="cont">
             <h1>Your Tasks</h1>
             {% for i in task %}
-                <br><br><br>
+                <p>{{i.task}}</p>
+                <button>
+                    <a href="{% url 'task' i.id %}">Delete</a>
+                </button>
+                <button>
+                    <a href="{% url 'update_task' i.id %}">Update</a>
+                </button>
+                <p>{{i.date}}</p>
             {% endfor %}
         </section>
         <br><br>
