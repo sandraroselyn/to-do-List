@@ -15,6 +15,11 @@
             border-radius: 8px;
             background-color: rgb(189, 231, 194);
         }
+        button{
+            size: 15px;
+            background-color: rgb(47, 88, 47);
+           
+        }
             
        
     </style>
@@ -23,21 +28,28 @@
     <section>
         <div class="cont">
             <h1>Your Tasks</h1>
-            {% for i in task %}
+           
+                {% for i in task %}
                 <p>{{i.task}}</p>
-                <button>
-                    <a href="{% url 'task' i.id %}">Delete</a>
-                </button>
-                <button>
-                    <a href="{% url 'update_task' i.id %}">Update</a>
-                </button>
                 <p>{{i.date}}</p>
-            {% endfor %}
-        </section>
+                <button>
+                    <a href="{% url 'task' i.id %}" style=" text-decoration: none;
+                        color: white;">Delete</a>
+                </button>
+                <button>
+                    <a href="{% url 'update_task' i.id %}" style=" text-decoration: none;
+                         color: white;">Update</a>
+                </button>
+                <br><br>
+                {% endfor %}
+            
+    
         <br><br>
         <button>
-            <a href="{% url 'home'  %}">Back to add task</a>
+            <a href="{% url 'home'  %}"  style=" text-decoration: none;
+                        color: white;">Back to add task</a>
         </button>
+    </section>
     </div>
 </body>
 </html>
