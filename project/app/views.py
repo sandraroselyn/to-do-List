@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Data
+from django.contrib.auth.models import User
 # Create your views here.
 def home(request):
     if request.method == "POST":
@@ -24,3 +25,14 @@ def update_task(request,id):
         a.save()
         return redirect('task_list')
     return render(request,'update_task.html',{'a':a})
+
+def login_page(request):
+    return render(request,'login.html')
+
+def register_page(request):
+    if request.method == 'POST':
+        name=request.POST.get('name')
+        password=request.POST.get('pass')
+        User.objects.create_user(username=name,password=password)
+        return redirect('login_page')
+    return render(request,'register.html')

@@ -4,4 +4,5 @@ from django.db import models
 class Data(models.Model):
     task=models.CharField(max_length=200)
     date=models.DateField()
-    
+
+
